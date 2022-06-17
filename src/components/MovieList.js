@@ -2,6 +2,11 @@ import React from 'react';
 
    const MovieList = (props) => {
 
+    // function handleClick(e) {
+    //   //  console.log("button click")
+    //   console.log(e.pageX)
+    // }
+
     return (
         <div className='row'>
 
@@ -13,7 +18,7 @@ import React from 'react';
                             <h5 className='card-title'>{movie.name}</h5>
                             <p className='card-text'>{movie.overview}</p>
                             <div className='d-flex justify-content-between align-items-center'>
-                                <button type='button' className='btn btn-md btn-outline-danger'>Delete</button>
+                                <button type='button' onClick={(event) => props.deleteMovieProp(movie)} className='btn btn-md btn-outline-danger'>Delete</button>
                                 <h2><span className='badge badge-info bg-primary'>{movie.rating}</span></h2>
                             </div>
                         </div>
