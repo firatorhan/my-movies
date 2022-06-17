@@ -4,7 +4,7 @@ class SearchBar extends React.Component {
 
     render(){
         return(
-            <div>Search Bar</div>
+            <h2>Search Bar</h2>
         )
     }
      

@@ -51,11 +51,13 @@ class App extends React.Component {
             <div className='container'>
                 <div className='row'>
                     <div className='col-lg-12'>
-                        <SearchBar />
+                       
                     </div>
              
                 </div>
-                <MovieList />
+                <MovieList 
+                movies= {this.state.movies}
+                />
                 
             </div>
         )
