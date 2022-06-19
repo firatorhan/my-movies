@@ -30,7 +30,7 @@ class App extends React.Component {
             },
             {
                 "name": "Blitz 007",
-                "rating": "11",
+                "rating": "10",
                 "overview": "A tough, renegade cop with a gay sidekick is dispatched to take down a serial killer who has been targeting police officers. AÇIKLAMA AÇIKLAMA",
                 "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/qCPMjT8Ld8tvs1zs7LY2jpKlRIK.jpg",
                 "id": 12
@@ -49,10 +49,15 @@ class App extends React.Component {
     const newMovieList = this.state.movies.filter(
         m => m.id !== movie.id
     );
-    this.setState({
-        movies: newMovieList 
-    })
- }
+
+//     this.setState({
+//         movies: newMovieList 
+//     })
+         
+        this.setState(state => ({
+            movies: newMovieList
+        }))
+ } 
 
 
     render() {
@@ -60,7 +65,7 @@ class App extends React.Component {
             <div className='container'>
                 <div className='row'>
                     <div className='col-lg-12'>
-                       
+                       <SearchBar />
                     </div>
              
                 </div>
