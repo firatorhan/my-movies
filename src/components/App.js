@@ -4,7 +4,11 @@ import SearchBar from './SearchBar';
 import AddMovie from './AddMovie';
 import EditMovie from './EditMovie';
 import axios from 'axios';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+  } from "react-router-dom";
 
 class App extends React.Component {
 
@@ -71,30 +75,22 @@ class App extends React.Component {
         });
 
         return (
-            <Router>
-
-                <div className="container">
-
-                    <Switch>
-
-
+            <BrowserRouter> 
+            <Routes>
                         <Route path="/" exact render={() => (
-                            <React.Fragment>
+                           <React.Fragment>
                                 <div className="row">
                                     <div className="col-lg-12">
                                         <SearchBar searchMovieProp={this.searchMovie} />
                                     </div>
                                 </div>
-
-
-                                <MovieList
+                                <MovieList 
                                     movies={filteredMovies}
                                     deleteMovieProp={this.deleteMovie}
 
                                 />
                             </React.Fragment>
-                        )}>
-
+                        )} >
                         </Route>
 
                         <Route path="/add" render={({ history }) => (
@@ -128,10 +124,8 @@ class App extends React.Component {
 
                         </Route>
 
-                    </Switch>
-                </div>
-
-            </Router>
+            </Routes>
+            </BrowserRouter>
         )
 
     }
